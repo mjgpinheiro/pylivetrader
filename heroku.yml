@@ -1,5 +1,10 @@
-$ cat config.yaml
-key_id: {your api key id}
-secret: {your api secret key}
-base_url: {https://api.alpaca.markets/ or https://paper-api.alpaca.markets}
-$ pylivetrader run -f algo.py --backend-config config.yaml
+build:
+  config:
+    APCA_API_KEY_ID: $APCA_API_KEY_ID
+    APCA_API_SECRET_KEY: $APCA_API_SECRET_KEY
+  docker:
+    worker: Dockerfile
+
+run: 
+  worker: 
+    image: worker
