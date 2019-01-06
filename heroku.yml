@@ -1,8 +1,5 @@
-build:
-  docker:
-    web: Dockerfile
-  config:
-    STAGING_CONFIG_VAR: 0
-
-run:
-  web: ruby myapp.rb -p $PORT
+$ cat config.yaml
+key_id: {your api key id}
+secret: {your api secret key}
+base_url: {https://api.alpaca.markets/ or https://paper-api.alpaca.markets}
+$ pylivetrader run -f algo.py --backend-config config.yaml
