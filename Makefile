@@ -1,12 +1,11 @@
-shell:
-	docker run -it --rm -v $(PWD):/w -w /w python:3.6-stretch bash
+TAG := $(shell grep pylivetrader Pipfile | sed  -E 's/pylivetrader = "==([0-9.]+)"/\1/')
 
-lint:
-	python setup.py flake8
+ifeq ($(TAG),)
+	error "TAG is not specified"
+endif
 
-test:
-	python setup.py test
+all:
+	docker build -t alpacamarkets/pylivetrader:$(TAG) .
 
-release:
-	python setup.py sdist bdist_wheel
-	twine upload dist/*
+push:
+	docker push alpacamarkets/pylivetrader:$(TAG)
