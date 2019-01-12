@@ -5,7 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 from zipline.pipeline import Pipeline, CustomFilter
-from zipline.algorithm import attach_pipeline, pipeline_output
+from zipline.algorithm import (attach_pipeline, pipeline_output)
 from zipline.pipeline.filters import QTradableStocksUS
 from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
