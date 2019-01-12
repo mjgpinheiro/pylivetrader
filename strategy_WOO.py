@@ -4,7 +4,7 @@ Spyder Editor
 
 This is a temporary script file.
 """
-from zipline.pipeline import (Pipeline, CustomFilter)
+from zipline.api import (Pipeline, CustomFilter)
 #from zipline.pipeline import Pipeline
 
 from zipline.algorithm import (attach_pipeline, pipeline_output)
