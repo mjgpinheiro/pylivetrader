@@ -7,8 +7,8 @@ This is a temporary script file.
 #from zipline.api import (Pipeline, CustomFilter)
 from zipline.pipeline import (Pipeline, CustomFilter)
 
-from zipline.algorithm import (attach_pipeline, pipeline_output)
-from zipline.pipeline.filters import QTradableStocksUS
+from pylivetrader.api import (attach_pipeline, pipeline_output)
+from pipeline_live.data.iex.pricing import QTradableStocksUS
 from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
 import pandas as pd
