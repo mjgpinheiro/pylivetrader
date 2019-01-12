@@ -15,5 +15,6 @@ COPY . /app
 
 WORKDIR /app
 
-CMD pylivetrader run -f algo.py
+CMD pylivetrader run -f strategy_WOO.py
+#CMD pylivetrader run -f algo.py
 #CMD docker run -v $PWD:/work -w /work alpacamarkets/pylivetrader pylivetrader run -f algo.py
