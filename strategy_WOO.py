@@ -4,8 +4,8 @@ Spyder Editor
 
 This is a temporary script file.
 """
-from zipline.api import (Pipeline, CustomFilter)
-#from zipline.pipeline import Pipeline
+#from zipline.api import (Pipeline, CustomFilter)
+from zipline.pipeline import (Pipeline, CustomFilter)
 
 from zipline.algorithm import (attach_pipeline, pipeline_output)
 from zipline.pipeline.filters import QTradableStocksUS
