@@ -29,7 +29,7 @@ from pylivetrader.finance.execution import LimitOrder
 from zipline.pipeline import Pipeline
 
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-from pipeline_live.data.iex.pricing import QTradableStocksUS
+#from pipeline_live.data.iex.pricing import QTradableStocksUS
 from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
 import pandas as pd
@@ -37,7 +37,8 @@ import pandas as pd
 def initialize(context):
     pipe = Pipeline()
     volatility = AnnualizedVolatility(window_length=30)
-    pipe.set_screen(QTradableStocksUS())
+    #pipe.set_screen(QTradableStocksUS())
+    pipe.set_screen(USEquityPricing())
     pipe.add(volatility,'VOL')
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
