@@ -44,8 +44,9 @@ def initialize(context):
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
     
     set_slippage(slippage.FixedSlippage(spread=0))
-    set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
-
+    #set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
+    set_commission(commission.PerShare(min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
+       
     schedule_function(test_waters_beginning, date_rules.every_day(), time_rules.market_open(minutes=1))
     schedule_function(flush_orders, date_rules.every_day(), time_rules.market_open(minutes=2))
     schedule_function(order_list, date_rules.every_day(), time_rules.market_open(minutes=(3)))
