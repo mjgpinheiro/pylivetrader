@@ -22,9 +22,9 @@ from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 from pipeline_live.data.iex.factors import (
     SimpleMovingAverage, AverageDollarVolume,
 )
-from pipeline_live.data.polygon.filters import (
-    IsPrimaryShareEmulation as IsPrimaryShare,
-)
+#from pipeline_live.data.polygon.filters import (
+#    IsPrimaryShareEmulation as IsPrimaryShare,
+#)
 from pylivetrader.finance.execution import LimitOrder
 from zipline.pipeline import Pipeline
 
