@@ -5,7 +5,9 @@ mjp-v1
 This is a temporary script file.
 """
 
-from pipeline_live.data.iex.pricing import USEquityPricing
+#from pipeline_live.data.iex.pricing import USEquityPricing
+from pylivetrader.data.iex.pricing import USEquityPricing
+
 from zipline.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (
     attach_pipeline,
