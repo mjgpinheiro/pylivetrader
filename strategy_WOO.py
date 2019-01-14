@@ -5,7 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 #from zipline.api import (Pipeline, CustomFilter)
-from zipline.pipeline import (Pipeline, CustomFilter)
+#from zipline.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (
     attach_pipeline,
     date_rules,
@@ -46,7 +46,7 @@ def initialize(context):
     
     zipline.api.set_slippage(slippage.FixedSlippage(spread=0.00))
     #set_slippage(slippage.FixedSlippage(0.00,0.00))
-    pylivetrader.api.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
+    zipline.api.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
     #set_commission(commission.PerShare(min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
        
     schedule_function(test_waters_beginning, date_rules.every_day(), time_rules.market_open(minutes=1))
