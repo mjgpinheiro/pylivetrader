@@ -35,8 +35,8 @@ def initialize(context):
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
     
-    set_slippage(slippage.FixedSlippage(spread=0))
-    set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
+    #set_slippage(slippage.FixedSlippage(spread=0))
+    #set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
 
     schedule_function(test_waters_beginning, date_rules.every_day(), time_rules.market_open(minutes=1))
     schedule_function(flush_orders, date_rules.every_day(), time_rules.market_open(minutes=2))
@@ -55,6 +55,12 @@ def initialize(context):
 
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close(minutes=1))
     
+        # API functions
+def initialize_api(context):
+    context.incr = 0
+    context.sale_price = None
+    set_slippage(FixedSlippage(spread=0))
+    set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
 
 def before_trading_start(context, data):
     context.output = pipeline_output('pipe').nlargest(20, 'VOL')
