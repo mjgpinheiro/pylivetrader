@@ -30,7 +30,7 @@ def initialize(context):
     pipe = Pipeline()
     volatility = AnnualizedVolatility(window_length=30)
     #pipe.set_screen(QTradableStocksUS())
-    pipe.set_screen()
+    #pipe.set_screen()
     pipe.add(volatility,'VOL')
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
