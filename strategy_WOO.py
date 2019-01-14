@@ -28,7 +28,14 @@ from pipeline_live.data.iex.factors import (
 #)
 from pylivetrader.finance.execution import LimitOrder
 #from zipline.pipeline import Pipeline
-
+from zipline.algorithm import TradingAlgorithm
+from zipline.api import (
+    FixedSlippage,
+    order,
+    set_slippage,
+    record,
+    sid,
+)
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
