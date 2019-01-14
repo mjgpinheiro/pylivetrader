@@ -36,7 +36,7 @@ from zipline.api import (
     record,
     sid,
 )
-from pylivetrader.api import (attach_pipeline, pipeline_output)
+#from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
 from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
