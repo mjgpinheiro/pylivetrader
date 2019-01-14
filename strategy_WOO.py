@@ -27,6 +27,8 @@ from pylivetrader.api import (
 from pipeline_live.data.iex.factors import (
     AverageDollarVolume, AnnualizedVolatility
 )
+from zipline.pipeline.engine import default_populate_initial_workspace
+
 #from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
 import pandas as pd
