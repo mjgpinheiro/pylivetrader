@@ -27,7 +27,7 @@ from pipeline_live.data.polygon.filters import (
     IsPrimaryShareEmulation as IsPrimaryShare,
 )
 from pylivetrader.finance.execution import LimitOrder
-#from zipline.pipeline import Pipeline
+from zipline.pipeline import Pipeline
 from zipline.algorithm import TradingAlgorithm
 from zipline.api import (
     FixedSlippage,
