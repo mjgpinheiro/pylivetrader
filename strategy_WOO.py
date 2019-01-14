@@ -19,7 +19,9 @@ from pylivetrader.api import (
     schedule_function,
 )
 #from zipline.algorithm import attach_pipeline, pipeline_output
-from zipline.pipeline.filters import QTradableStocksUS
+#from zipline.pipeline.filters import QTradableStocksUS
+from pipeline_live.data.iex.pricing import USEquityPricing
+
 from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
 import pandas as pd
