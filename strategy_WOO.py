@@ -52,13 +52,7 @@ def initialize(context):
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
     
-    # API functions
-def initialize_api(context):
-    context.incr = 0
-    context.sale_price = None
-    set_slippage(FixedSlippage(spread=0))
-
-    
+   
     #set_slippage(slippage.FixedSlippage(spread=0))
     #set_slippage(slippage.FixedSlippage(spread=0.00))
     zipline.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
@@ -80,7 +74,13 @@ def initialize_api(context):
             schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_open(minutes=(i+6)))
 
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close(minutes=1))
-    
+
+        # API functions
+def initialize_api(context):
+    context.incr = 0
+    context.sale_price = None
+    set_slippage(FixedSlippage(spread=0))
+
 
 def before_trading_start(context, data):
     context.output = pipeline_output('pipe').nlargest(20, 'VOL')
