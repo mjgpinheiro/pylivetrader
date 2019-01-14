@@ -6,17 +6,18 @@ This is a temporary script file.
 """
 #from zipline.api import (Pipeline, CustomFilter)
 #from zipline.pipeline import (Pipeline, CustomFilter)
-from pylivetrader.api import (
-    attach_pipeline,
-    date_rules,
-    get_datetime,
-    time_rules,
-    order,
-    get_open_orders,
-    cancel_order,
-    pipeline_output,
-    schedule_function,
-)
+#from pylivetrader.api import (
+#    attach_pipeline,
+#    date_rules,
+#    get_datetime,
+#    time_rules,
+#    order,
+#    get_open_orders,
+#    cancel_order,
+#    pipeline_output,
+#    schedule_function,
+#)
+from pylivetrader.api import *
 from pipeline_live.data.iex.pricing import USEquityPricing
 from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 from pipeline_live.data.iex.factors import (
@@ -44,7 +45,7 @@ def initialize(context):
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
     
-    zipline.set_slippage(slippage.FixedSlippage(spread=0.00))
+    pylivetrader.set_slippage(slippage.FixedSlippage(spread=0.00))
     #set_slippage(slippage.FixedSlippage(spread=0.00))
     zipline.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
     #set_commission(commission.PerShare(min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
