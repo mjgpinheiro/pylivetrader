@@ -5,7 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 #from zipline.api import (Pipeline, CustomFilter)
-from zipline.pipeline import (Pipeline, CustomFilter)
+from pylivetrader.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (
     attach_pipeline,
     date_rules,
@@ -26,7 +26,7 @@ from pipeline_live.data.iex.factors import (
 #    IsPrimaryShareEmulation as IsPrimaryShare,
 #)
 from pylivetrader.finance.execution import LimitOrder
-from zipline.pipeline import Pipeline
+from pylivetrader.pipeline import Pipeline
 
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
