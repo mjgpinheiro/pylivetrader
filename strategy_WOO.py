@@ -26,7 +26,7 @@ from pipeline_live.data.iex.factors import (
 #    IsPrimaryShareEmulation as IsPrimaryShare,
 #)
 from pylivetrader.finance.execution import LimitOrder
-from pylivetrader.pipeline import Pipeline
+from zipline.pipeline import Pipeline
 
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
