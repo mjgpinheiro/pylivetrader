@@ -22,7 +22,7 @@ from pylivetrader.api import (
 )
 #from zipline.algorithm import attach_pipeline, pipeline_output
 #from zipline.pipeline.filters import QTradableStocksUS
-from zipline.data.iex.pricing import USEquityPricing
+from pipeline_live.data.iex.pricing import USEquityPricing
 from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 from pipeline_live.data.iex.factors import (
     AverageDollarVolume, AnnualizedVolatility
