@@ -27,9 +27,9 @@ from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 from pipeline_live.data.iex.factors import (
     AverageDollarVolume, AnnualizedVolatility
 )
-from zipline.pipeline.engine import default_populate_initial_workspace
-from zipline.api import order_target, record, symbol
-from zipline.finance import commission, slippage
+from pylivetrader.pipeline.engine import default_populate_initial_workspace
+from pylivetrader.api import order_target, record, symbol
+from pylivetrader.finance import commission, slippage
 
 #from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
