@@ -45,8 +45,8 @@ def initialize(context):
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
     
     #zipline.api.set_slippage(slippage.FixedSlippage(spread=0.00))
-    set_slippage(slippage.FixedSlippage(spread=0.00))
-    zipline.api.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
+    api.set_slippage(slippage.FixedSlippage(spread=0.00))
+    api.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
     #set_commission(commission.PerShare(min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
        
     schedule_function(test_waters_beginning, date_rules.every_day(), time_rules.market_open(minutes=1))
