@@ -5,7 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 #from zipline.api import (Pipeline, CustomFilter)
-#from zipline.pipeline import (Pipeline, CustomFilter)
+from zipline.pipeline import (Pipeline, CustomFilter)
 #from pylivetrader.api import (
 #    attach_pipeline,
 #    date_rules,
@@ -27,7 +27,7 @@ from pipeline_live.data.iex.factors import (
 #    IsPrimaryShareEmulation as IsPrimaryShare,
 #)
 from pylivetrader.finance.execution import LimitOrder
-from zipline.pipeline import Pipeline
+#from zipline.pipeline import Pipeline
 
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from pipeline_live.data.iex.pricing import QTradableStocksUS
@@ -45,7 +45,7 @@ def initialize(context):
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
     
-    pipe.set_slippage(slippage.FixedSlippage(spread=0.00))
+    zipline.set_slippage(slippage.FixedSlippage(spread=0))
     #set_slippage(slippage.FixedSlippage(spread=0.00))
     zipline.set_commission(commission.PerShare(cost=0.000, min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
     #set_commission(commission.PerShare(min_trade_cost=0.00)) # 0.0003 and 0.00 is about the most we can pay right now for this.
