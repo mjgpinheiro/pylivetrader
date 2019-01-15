@@ -4,53 +4,12 @@ Spyder Editor
 mjp-v1
 This is a temporary script file.
 """
-
-#from pipeline_live.data.iex.pricing import USEquityPricing
-#from pylivetrader.data.iex.pricing import USEquityPricing
 from zipline.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-from pipeline_live.engine import LivePipelineEngine
-#from pylivetrader.api import (
-#    attach_pipeline,
-#    date_rules,
-#    get_datetime,
-#    time_rules,
-#    order,
-#    get_open_orders,
-#    cancel_order,
-#    pipeline_output,
-#    schedule_function,
-#)
-#from zipline.algorithm import attach_pipeline, pipeline_output
-#from pipeline_live.data.iex.pricing import USEquityPricing
-from pipeline_live.data.iex.classifiers import Sector
-#from pipeline_live.data.iex.factors import AverageDollarVolume
-from zipline.pipeline import Pipeline
+from pipeline_live.data.iex.factors import AverageDollarVolume
 
-#from zipline.pipeline.filters import QTradableStocksUS
-#from pipeline_live.data.iex.pricing import USEquityPricing
-#from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
-from pipeline_live.data.iex.factors import (
-    AverageDollarVolume, AnnualizedVolatility
-)
-#from pylivetrader.pipeline.engine import default_populate_initial_workspace
-#from pylivetrader.api import order_target, record, symbol
-#from pylivetrader.finance import commission, slippage
-
-#from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np
 import pandas as pd
-
-from itertools import cycle
-
-import logbook
-
-log = logbook.Logger('strategy_WOO')
-
-
-def record(*args, **kwargs):
-    print('args={}, kwargs={}'.format(args, kwargs))
-
 
 def initialize(context):
     pipe = Pipeline()
