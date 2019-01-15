@@ -23,9 +23,9 @@ from zipline.pipeline import (Pipeline, CustomFilter)
 #from zipline.algorithm import attach_pipeline, pipeline_output
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from zipline.pipeline.filters import QTradableStocksUS
-#from pipeline_live.data.iex.pricing import USEquityPricing
-#from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
-from zipline.data.iex.factors import (
+from pipeline_live.data.iex.pricing import USEquityPricing
+from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
+from pipeline_live.data.iex.factors import (
     AverageDollarVolume, AnnualizedVolatility
 )
 #from pylivetrader.pipeline.engine import default_populate_initial_workspace
