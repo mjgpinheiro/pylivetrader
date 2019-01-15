@@ -7,6 +7,7 @@ This is a temporary script file.
 
 #from pipeline_live.data.iex.pricing import USEquityPricing
 #from pylivetrader.data.iex.pricing import USEquityPricing
+from pylivetrader.api import (attach_pipeline, pipeline_output)
 
 from zipline.pipeline import (Pipeline, CustomFilter)
 #from pylivetrader.api import (
@@ -21,10 +22,17 @@ from zipline.pipeline import (Pipeline, CustomFilter)
 #    schedule_function,
 #)
 #from zipline.algorithm import attach_pipeline, pipeline_output
-from pylivetrader.api import (attach_pipeline, pipeline_output)
-#from zipline.pipeline.filters import QTradableStocksUS
+from pipeline_live.engine import LivePipelineEngine
 from pipeline_live.data.iex.pricing import USEquityPricing
-from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
+from pipeline_live.data.iex.classifiers import Sector
+#from pipeline_live.data.iex.factors import AverageDollarVolume
+from zipline.pipeline import Pipeline
+
+from .datamock import mock_iex
+
+#from zipline.pipeline.filters import QTradableStocksUS
+#from pipeline_live.data.iex.pricing import USEquityPricing
+#from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 from pipeline_live.data.iex.factors import (
     AverageDollarVolume, AnnualizedVolatility
 )
