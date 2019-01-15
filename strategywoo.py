@@ -7,7 +7,7 @@ This is a temporary script file.
 #from zipline.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-from pipeline_live.data.iex.pricing import USEquityPricing
+#from pipeline_live.data.iex.pricing import USEquityPricing
 #from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 #from zipline.pipeline import (AverageDollarVolume, AnnualizedVolatility)
 from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
