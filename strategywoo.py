@@ -4,12 +4,41 @@ Spyder Editor
 mjp-v1
 This is a temporary script file.
 """
-from zipline.pipeline import (Pipeline, CustomFilter)
-from pylivetrader.api import (attach_pipeline, pipeline_output)
-from pipeline_live.data.iex.factors import (AverageDollarVolume, 
-           AnnualizedVolatility)
+from pylivetrader.api import (
+    attach_pipeline,
+    date_rules,
+    get_datetime,
+    time_rules,
+    order,
+    get_open_orders,
+    cancel_order,
+    pipeline_output,
+    schedule_function,
+)
+from pipeline_live.data.iex.pricing import USEquityPricing
+from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
+from pipeline_live.data.iex.factors import (
+    SimpleMovingAverage, AverageDollarVolume,
+)
+from pipeline_live.data.polygon.filters import (
+    IsPrimaryShareEmulation as IsPrimaryShare,
+)
+from pylivetrader.finance.execution import LimitOrder
+from zipline.pipeline import Pipeline
 
-import numpy as np
+import numpy as np  # needed for NaN handling
+import math  # ceil and floor are useful for rounding
+
+from itertools import cycle
+
+import logbook
+
+log = logbook.Logger('algo')
+
+
+def record(*args, **kwargs):
+    print('args={}, kwargs={}'.format(args, kwargs))
+
 import pandas as pd
 
 def initialize(context):
