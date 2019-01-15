@@ -27,8 +27,6 @@ from pipeline_live.data.iex.classifiers import Sector
 #from pipeline_live.data.iex.factors import AverageDollarVolume
 from zipline.pipeline import Pipeline
 
-from .datamock import mock_iex
-
 #from zipline.pipeline.filters import QTradableStocksUS
 #from pipeline_live.data.iex.pricing import USEquityPricing
 #from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
