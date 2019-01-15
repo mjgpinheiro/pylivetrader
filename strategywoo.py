@@ -10,7 +10,7 @@ This is a temporary script file.
 #from pipeline_live.data.iex.fundamentals import IEXKeyStats
 #from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.pipeline import (Pipeline, CustomFilter)
-from zipleline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
+from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 #from zipline.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 import numpy as np  # needed for NaN handling
