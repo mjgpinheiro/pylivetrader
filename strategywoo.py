@@ -18,7 +18,7 @@ from pylivetrader.api import (
 from pipeline_live.data.iex.pricing import USEquityPricing
 from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
 from pipeline_live.data.iex.factors import (
-    SimpleMovingAverage, AverageDollarVolume,
+    SimpleMovingAverage, AverageDollarVolume, AnnualizedVolatility
 )
 from pipeline_live.data.polygon.filters import (
     IsPrimaryShareEmulation as IsPrimaryShare,
