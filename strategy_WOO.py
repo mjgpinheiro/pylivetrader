@@ -35,6 +35,17 @@ from pylivetrader.finance import commission, slippage
 import numpy as np
 import pandas as pd
 
+from itertools import cycle
+
+import logbook
+
+log = logbook.Logger('algo')
+
+
+def record(*args, **kwargs):
+    print('args={}, kwargs={}'.format(args, kwargs))
+
+
 def initialize(context):
     pipe = Pipeline()
     volatility = AnnualizedVolatility(window_length=30)
