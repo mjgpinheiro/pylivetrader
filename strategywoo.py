@@ -4,18 +4,15 @@ Spyder Editor
 mjp-v1
 This is a temporary script file.
 """
-from pipeline_live.engine import LivePipelineEngine
-from pipeline_live.data.sources.iex import list_symbols
-from pipeline_live.data.iex.pricing import USEquityPricing
-from pipeline_live.data.iex.fundamentals import IEXKeyStats
-from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
-from zipline.pipeline import Pipeline
+#from pipeline_live.engine import LivePipelineEngine
+#from pipeline_live.data.sources.iex import list_symbols
+#from pipeline_live.data.iex.pricing import USEquityPricing
+#from pipeline_live.data.iex.fundamentals import IEXKeyStats
+#from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
+from zipline.pipeline import (Pipeline, CustomFilter)
+from zipleline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 #from zipline.pipeline import (Pipeline, CustomFilter)
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-#from pipeline_live.data.iex.pricing import USEquityPricing
-#from pipeline_live.data.iex.fundamentals import IEXCompany, IEXKeyStats
-#from zipline.pipeline import (AverageDollarVolume, AnnualizedVolatility)
-#from pipeline_live.data.iex.factors import (AverageDollarVolume, AnnualizedVolatility)
 import numpy as np  # needed for NaN handling
 import math  # ceil and floor are useful for rounding
 import pandas as pd
