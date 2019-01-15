@@ -22,7 +22,7 @@ from pipeline_live.engine import LivePipelineEngine
 #    schedule_function,
 #)
 #from zipline.algorithm import attach_pipeline, pipeline_output
-from pipeline_live.data.iex.pricing import USEquityPricing
+#from pipeline_live.data.iex.pricing import USEquityPricing
 from pipeline_live.data.iex.classifiers import Sector
 #from pipeline_live.data.iex.factors import AverageDollarVolume
 from zipline.pipeline import Pipeline
