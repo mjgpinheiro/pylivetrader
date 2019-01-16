@@ -1,9 +1,9 @@
 
 from zipline.pipeline import (Pipeline)
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
-#from pylivetrader.api import (attach_pipeline, pipeline_output)
+from pylivetrader.api import (attach_pipeline, pipeline_output)
 #import iexfinance as iex
-#import numpy as np  # needed for NaN handling
+import numpy as np  # needed for NaN handling
 #import math  # ceil and floor are useful for rounding
 import pandas as pd
 
