@@ -5,7 +5,7 @@ mjp-v1
 This is a temporary script file.
 """
 from zipline.pipeline import (Pipeline, CustomFilter)
-from zipline.pipeline.filters import QTradableStocksUS
+from zipline.pipeline.filters import USEquityPricing
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
