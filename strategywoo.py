@@ -9,7 +9,6 @@ from zipline.pipeline import (Pipeline, CustomFilter)
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-import alpaca_backtrader_api
 from pipeline_live.data.iex.pricing import USEquityPricing
 
 dollar_volume = AverageDollarVolume(
