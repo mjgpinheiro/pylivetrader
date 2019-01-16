@@ -9,7 +9,7 @@ from zipline.pipeline import (Pipeline, CustomFilter)
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-from pipeline_live.data.iex.pricing import USEquityPricing
+#from pipeline_live.data.iex.pricing import USEquityPricing
 
 dollar_volume = AverageDollarVolume(
     inputs=[USEquityPricing.close, USEquityPricing.volume],
