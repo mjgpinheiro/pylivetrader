@@ -4,12 +4,10 @@ Spyder Editor
 mjp-v1
 This is a temporary script file.
 """
-from zipline.pipeline import (Pipeline, CustomFilter)
-#from zipline.pipeline.filters import USEquityPricing
+from zipline.pipeline import (Pipeline)
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
-#from pipeline_live.data.iex.pricing import USEquityPricing
 import numpy as np  # needed for NaN handling
 import math  # ceil and floor are useful for rounding
 import pandas as pd
@@ -18,7 +16,6 @@ def initialize(context):
     pipe = Pipeline()
     volatility = AnnualizedVolatility(window_length=30)
     #pipe.set_screen(QTradableStocksUS())
-    #pipe.set_screen()
     pipe.add(volatility,'VOL')
     attach_pipeline(pipe, 'pipe')
     schedule_function(flush_portfolio, date_rules.every_day(), time_rules.market_close())
