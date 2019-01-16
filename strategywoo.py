@@ -10,11 +10,6 @@ from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 #from pipeline_live.data.iex.pricing import USEquityPricing
-
-dollar_volume = AverageDollarVolume(
-    inputs=[USEquityPricing.close, USEquityPricing.volume],
-    window_length=20,
-)
 import numpy as np  # needed for NaN handling
 import math  # ceil and floor are useful for rounding
 import pandas as pd
