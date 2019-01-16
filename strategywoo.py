@@ -5,10 +5,17 @@ mjp-v1
 This is a temporary script file.
 """
 from zipline.pipeline import (Pipeline, CustomFilter)
-from zipline.pipeline.filters import USEquityPricing
+#from zipline.pipeline.filters import USEquityPricing
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
+import alpaca_backtrader_api
+from pipeline_live.data.iex.pricing import USEquityPricing
+
+dollar_volume = AverageDollarVolume(
+    inputs=[USEquityPricing.close, USEquityPricing.volume],
+    window_length=20,
+)
 import numpy as np  # needed for NaN handling
 import math  # ceil and floor are useful for rounding
 import pandas as pd
