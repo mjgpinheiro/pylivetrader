@@ -1,5 +1,5 @@
 
-#from zipline.pipeline import (Pipeline)
+from zipline.pipeline import (Pipeline)
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
 #from pylivetrader.api import (attach_pipeline, pipeline_output)
 #import iexfinance as iex
