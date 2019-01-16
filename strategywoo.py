@@ -1,12 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-mjp-v1
-This is a temporary script file.
-"""
+
 from zipline.pipeline import (Pipeline)
 from zipline.pipeline.factors import (AverageDollarVolume, AnnualizedVolatility)
-from zipline.algorithm import *
 from pylivetrader.api import (attach_pipeline, pipeline_output)
 import numpy as np  # needed for NaN handling
 import math  # ceil and floor are useful for rounding
